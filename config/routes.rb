@@ -1,4 +1,5 @@
 Jqmblog::Application.routes.draw do
+  get "twitter/tweets"
   get "estado_filtro/busqueda"
   get "dependencias/filtroPartidos"
   get "dependencias/partidos"
