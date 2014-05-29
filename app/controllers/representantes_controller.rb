@@ -4,7 +4,11 @@ class RepresentantesController < ApplicationController
   # GET /representantes
   # GET /representantes.json
   def index
-    @representantes = Representante.all
+     @representantes = Representante.search(params[:search])
+  end
+
+  def search
+    @representantes = Representante.search(params[:search])
   end
 
   # GET /representantes/1
