@@ -1,0 +1,13 @@
+<div data-role="page" id="main">		
+		<div role="main" class="ui-content">
+		<div class="ui-grid-b center">
+    			<div class="ui-block-a"><a class="menu"><i class="glyphicon glyphicon-map-marker"></i></a><p class="txt">Localízame</p></div>
+    			<div class="ui-block-b"><a id="partido"  href="dependencias/filtroPartidos" class="menu"><i class="glyphicon glyphicon-briefcase"></i></a><p class="txt">Partidos</p></div>
+                <div class="ui-block-c"><a  class="menu"><%= image_tag "twitter.png" , class: "twitter" %></a><p class="txt" id="tw">Tweets</p></div>
+        </div>
+        <div class="clear"></div>
+        <%= render 'representantes/search' %>   
+	</div><!-- /content -->
+</div>
+
+
