@@ -1,66 +1,39 @@
 <div data-role="page">
-<p id="notice"><%= notice %></p>
+  <div data-role="header" class="cabecera" data-position="fixed" >
+    <h1 class="titulo">Representante</h1>
+    <a data-rel="back" data-icon="back">Volver</a>
+    </div>
 
-<p>
-  <strong>Num:</strong>
-  <%= @representante.num %>
-</p>
-
-<p>
-  <strong>Nombre:</strong>
-  <%= @representante.nombre %>
-</p>
-
-<p>
-  <strong>Partido:</strong>
-  <%= @representante.partido %>
-</p>
-
-<p>
-  <strong>Eleccion:</strong>
-  <%= @representante.eleccion %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @representante.estado %>
-</p>
-
-<p>
-  <strong>Camara:</strong>
-  <%= @representante.camara %>
-</p>
-
-<p>
-  <strong>Propietario:</strong>
-  <%= @representante.propietario %>
-</p>
-
-<p>
-  <strong>Twitter:</strong>
-  <%= @representante.twitter %>
-</p>
-
-<p>
-  <strong>Youtube:</strong>
-  <%= @representante.youtube %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @representante.facebook %>
-</p>
-
-<p>
-  <strong>Paginapersonal:</strong>
-  <%= @representante.paginapersonal %>
-</p>
-
-<p>
-  <strong>Twitteravatar:</strong>
-  <%= @representante.twitteravatar %>
-</p>
-
-<%= link_to 'Edit', edit_representante_path(@representante) %> |
-<%= link_to 'Back', representantes_path %>
+    <div role="main" class="ui-content">
+       <div class="perfiles">
+        <center><%= image_tag @representante.twitteravatar, class: "img-thumbnail personales" %></center>
+         <p class="nombre"><span><%= @representante.nombre %> </span></p>
+         <div data-role="tabs" id="tabs">
+          <div data-role="navbar">
+            <ul>
+              <li><p class="partido info"><span><%= image_tag @representante.partido + ".png", class: "imagen_partido" %> </span></p></li>
+              <li><p class="estado info">Estado: <span><%= @representante.estado %> </span></p></li>
+            </ul>
+            <ul>
+              <li><p class="eleccion info">Elección: <span ><%= @representante.eleccion %> </span></p></li>
+              <li><p class="camara info">Cámara: <span><%= @representante.camara %> </span></p></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+        <center><div class="socials">
+          <% if @representante.youtube != "" %>
+          <%= link_to image_tag('youtube.png'), 'http://youtube.com/' + @representante.youtube, title: 'Buckminsterfullerene', rel: 'tooltip', relative: true %>
+          <% end %>
+          <% if @representante.twitter != "" %>
+          <%= link_to image_tag('twitter.png'), 'https://twitter.com/intent/tweet/?text=exigimos se deseche la iniciativa pres. de ley de telecom. y se consensúe una nueva con la sociedad @'+@representante.twitter+ '&hashtags=Nomáspoderalpoder', title: 'Buckminsterfullerene', rel: 'tooltip', relative: true %>
+          <% end %>
+          <% if @representante.facebook != "" %>
+          <%= link_to image_tag('facebook.png'), 'http://facebook.com/'+ @representante.facebook, title: 'Buckminsterfullerene', rel: 'tooltip', relative: true %>
+          <% end %>
+        </div></center>
+    </div>
 </div>
+
+
+   

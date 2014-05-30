@@ -2,6 +2,31 @@
     text-align: center;
     padding-bottom: 10px;
 }
+.personales{
+	width: 100px;
+	text-align: center;
+}
+.nombre{
+	font-size: 24px;
+	font-weight: 200;
+	text-align: center;
+}
+.info{
+	background: none;
+	color: black;
+	text-align: center;
+}
+
+.socials{
+	width: 100%;
+}
+
+.logo_socials{
+	padding: 2%;
+}
+.imagen_partido{
+	width: 50px;
+}
 i{
 border: 2px solid #ffffff;
 border-radius: 50%;
