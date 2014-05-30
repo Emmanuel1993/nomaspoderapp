@@ -1,28 +1,69 @@
-
-<div data-role="page">
-	<div data-role="header">
-	<h1>representantes</h1>
-	<%= link_to 'Regresar', inicios_path %>
-	<%= link_to 'Agregar', new_representante_path, {"data-icon" => "plus", "data-theme" => "a"} %>
+<div data-role="page" id= "S" data-ajax= "false">
+	<div data-role="header" class="cabecera" data-position="fixed" >
+	<h1 class="titulo">Representantes</h1>
+	<%= link_to "volver", inicios_path, {"data-icon" => "back", "data-theme" => "a" , "class" => "titulo ui-btn-icon-notext"} %>
 	</div>
-	<div data-role="content">
-	  <ul data-role="listview">
-	
+		<form>
+    		<input data-type="search" id="divOfPs-input" placeholder="Busquedas" >
+		</form>
+	  <ul data-role="listview"  data-inset="true" data-filter="true" data-input="#divOfPs-input" >
+	  	<li></li>
 	   		<% @representantes.each do |representante| %>
-	   		
-	   			<% if representante.camara == "D"%>
-	        
-	        <li>
-	        <%= image_tag representante.twitteravatar %>
-	        <%= link_to representante.nombre, representante %>
-	       	<%= link_to 'edit representante', edit_representante_path(representante), "data-icon" => "gear" %>
-	
-			</li>
-			<% end %>
+	   		<% if representante.camara == "S" %>
+			<li>
+		        <%= image_tag representante.twitteravatar, class: "img-circle perfil" %>
+		    	<h2><%= link_to representante.nombre, representante %></h2>
+		    	<p><%= representante.partido %></p>
+		    	<p class="relax"> Elección: <%= representante.eleccion %> , Camara <%= representante.camara %></p>
+    		</li>
 	    <% end %>
+	    <% end %>
+	    <li></li>
 	    </ul>
-	</div>
+
+	<div data-role="footer" data-position="fixed" class="cabecera">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#S" data-icon="star" >Senadores</a></li>
+                <li><a href="#D" data-icon="bullets">Diputados</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
 </div>
+
+<div data-role="page" id="D" data-ajax= "false">
+	<div data-role="header" class="cabecera" data-position="fixed" >
+	<h1 class="titulo">Representantes</h1>
+	<%= link_to "volver", inicios_path, {"data-icon" => "back", "data-theme" => "a" , "class" => "titulo ui-btn-icon-notext"} %>
+	</div>
+		<form>
+    		<input data-type="search" id="divOfPs-input" placeholder="Busquedas" >
+		</form>
+	  <ul data-role="listview"  data-inset="true" data-filter="true" data-input="#divOfPs-input" >
+	  	<li></li>
+	   		<% @representantes.each do |representante| %>
+	   		 <% if representante.camara == "D" %>
+			<li>
+		        <%= image_tag representante.twitteravatar, class: "img-circle perfil" %>
+		    	<h2><%= link_to representante.nombre, representante %></h2>
+		    	<p><%= representante.partido %></p>
+		    	<p class="relax"> Elección: <%= representante.eleccion %> , Camara <%= representante.camara %></p>
+    		</li>
+	    <% end %>
+	    <% end  %>
+	    <li></li>
+	    </ul>
+
+	<div data-role="footer" data-position="fixed" class="cabecera">
+		<div data-role="navbar">
+            <ul>
+                <li><a href="#S" data-icon="star">Senadores</a></li>
+                <li><a href="#D" data-icon="bullets">Diputados</a></li>
+            </ul>
+        </div><!-- /navbar -->
+	</div><!-- /footer -->
+</div>
+
 
 
 
