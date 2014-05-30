@@ -1,5 +1,5 @@
 
-<div data-role="page">
+<div data-role="page" data-url="<%= request.path %>">
 	<div data-role="header">
 	<h1>representantes</h1>
 	<%= link_to 'Regresar', inicios_path %>
@@ -13,6 +13,7 @@
 	   			<% if representante.camara == "D"%>
 	        
 	        <li>
+	        	
 	        <%= image_tag representante.twitteravatar %>
 	        <%= link_to representante.nombre, representante %>
 	       	<%= link_to 'edit representante', edit_representante_path(representante), "data-icon" => "gear" %>
