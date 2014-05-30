@@ -1,5 +1,5 @@
 <div data-role="page" id= "S" data-ajax= "false">
-	<div data-role="header" class="cabecera" data-position="fixed" >
+	<div data-role="header" class="cabecera" data-position="fixed" data-tap-toggle="false" >
 	<h1 class="titulo">Representantes</h1>
 	<%= link_to "volver", inicios_path, {"data-icon" => "back", "data-theme" => "a" , "class" => "titulo ui-btn-icon-notext"} %>
 	</div>
@@ -21,7 +21,7 @@
 	    <li></li>
 	    </ul>
 
-	<div data-role="footer" data-position="fixed" class="cabecera">
+	<div data-role="footer" data-position="fixed" class="cabecera" data-tap-toggle="false">
 		<div data-role="navbar">
             <ul>
                 <li><a href="#S" data-icon="star" >Senadores</a></li>
@@ -32,14 +32,14 @@
 </div>
 
 <div data-role="page" id="D" data-ajax= "false">
-	<div data-role="header" class="cabecera" data-position="fixed" >
+	<div data-role="header" class="cabecera" data-position="fixed" data-tap-toggle="false" >
 	<h1 class="titulo">Representantes</h1>
 	<%= link_to "volver", inicios_path, {"data-icon" => "back", "data-theme" => "a" , "class" => "titulo ui-btn-icon-notext"} %>
 	</div>
-		<form>
-    		<input data-type="search" id="divOfPs-input" placeholder="Busquedas" >
+			<form>
+    		<input data-type="search" id="divOfPs-input1" placeholder="Busquedas" >
 		</form>
-	  <ul data-role="listview"  data-inset="true" data-filter="true" data-input="#divOfPs-input" >
+	  <ul data-role="listview"  data-inset="true" data-filter="true" data-input="#divOfPs-input1" >
 	  	<li></li>
 	   		<% @representantes.each do |representante| %>
 	   		 <% if representante.camara == "D" %>
@@ -54,7 +54,7 @@
 	    <li></li>
 	    </ul>
 
-	<div data-role="footer" data-position="fixed" class="cabecera">
+	<div data-role="footer" data-position="fixed" class="cabecera" data-tap-toggle="false">
 		<div data-role="navbar">
             <ul>
                 <li><a href="#S" data-icon="star">Senadores</a></li>
